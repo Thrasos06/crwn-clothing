@@ -1,4 +1,5 @@
 import React from "react";
+import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -9,10 +10,12 @@ const SignIn = () => {
     const { user } = await signInWithGooglePopup();
     createUserDocumentFromAuth(user);
   };
+
   return (
     <div>
       <div>sign-in.component</div>
       <button onClick={logGoogleUser}>Sign in with google</button>
+      <SignUpForm />
     </div>
   );
 };
