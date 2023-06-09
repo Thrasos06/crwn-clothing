@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 import FormInput from "../form-input/form-input.component";
 import "./sign-up-form.styles.scss";
 import Button from "../button/button.component";
@@ -23,10 +24,11 @@ const SignUpForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  console.log(formFields);
+  const { setCurrentUser } = useContext(UserContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (password !== confirmPassword) {
       alert("password do not match");
       return;
@@ -37,7 +39,10 @@ const SignUpForm = () => {
         email,
         password
       );
+      setCurrentUser(user);
+
       await createUserDocumentFromAuth(user, { displayName });
+
       resetFormFileds();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
