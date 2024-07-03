@@ -1,0 +1,21 @@
+
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.cart-item img {
+    flex: 30%;
+    max-width: 30%;
+}
+
+.cart-item span {
+    margin-right: 0.5rem;
+}
+
+.cart-item .price {
+    font-weight: 700;
+}
