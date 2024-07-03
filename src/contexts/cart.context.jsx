@@ -39,16 +39,15 @@ export const CartContext = createContext({
     cartItems: [],
     addItemToCart: () => {},
     removeItemFromCart: () => {},
-    // totalPrice: 0,
-    // setTotalPrice: () => {},
-    // toggleCart: () => {},
+    totalPrice: 0,
+    setTotalPrice: () => {},
     cartCount: 0,
 })
 
 export const CartProvider = ({ children }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-    // const [totalPrice, setTotalPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
     const [cartCount, setCartCount] = useState(0);
 
 
@@ -68,13 +67,11 @@ export const CartProvider = ({ children }) => {
   
         setCartItems(addCartItem(cartItems, productToAdd));
         // setTotalPrice(calculateTotalPrice(cartItems));
-        // toggleCart();
     }
 
     const removeItemFromCart = (cartItemToRemove) => {
         setCartItems(removeCartItem(cartItems, cartItemToRemove));
         // setTotalPrice(calculateTotalPrice(cartItems));
-        // toggleCart();
     }
 
 
