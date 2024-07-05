@@ -1,0 +1,37 @@
+
+.checkout-container .cart-item-grid .item {
+    margin-bottom: 2rem;
+ }
+
+ .checkout-container .cart-item-grid .item img {
+    width: 100%;
+ }
+
+ .checkout-container .cart-item-grid .item .item-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+.checkout-container .clear-item {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.checkout-container .clear-item:hover {
+   color: gray;
+}
+
+
+.decrement-item{
+    font-weight: 700;
+    margin-right: 0.4rem;
+    cursor: pointer;
+}
+
+.increment-item {
+    font-weight: 700;
+    margin-left: 0.4rem;
+    cursor: pointer;
+}

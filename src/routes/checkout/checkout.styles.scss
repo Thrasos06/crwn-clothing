@@ -21,20 +21,6 @@
  .checkout-container .header-bar span {
     font-size: 1.5rem;
  }
-
- .checkout-container .cart-item-grid .item {
-    margin-bottom: 2rem;
- }
-
- .checkout-container .cart-item-grid .item img {
-    width: 100%;
- }
-
- .checkout-container .cart-item-grid .item .item-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
  
 
  .checkout-container .chekout-header {
@@ -43,3 +29,10 @@
    margin-bottom: 2rem;
  }
 
+
+.total-amount {
+   font-size: 2rem;
+   text-align: right;
+   padding-top: 2rem;
+   border-top: 1px solid #ccc;
+}
