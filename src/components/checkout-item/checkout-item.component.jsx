@@ -28,7 +28,7 @@ const CheckoutItem = ({cartItem}) => {
                 <span>{quantity}</span>
                 <span className='increment-item' onClick={addItemHandler}>&#10095;</span>
             </div>
-            <span className='item-box'>{price * quantity}$</span>
+            <span className='item-box'>{price * quantity}$ {quantity > 1 && ` (${price}$ each)`}</span>
 
            <div className='item-box'>
                <span className='clear-item' onClick={clearItemHandler}>&#10005;</span>
