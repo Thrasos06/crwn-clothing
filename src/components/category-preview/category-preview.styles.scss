@@ -1,0 +1,16 @@
+.category-preview-container .title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.category-preview-container .title:hover {
+  color: gray;
+}
+
+.category-preview-container .preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
