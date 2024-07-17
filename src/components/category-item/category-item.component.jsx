@@ -1,9 +1,15 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import "./category-item.styles.scss";
 
 const CategoryItem = ({ category }) => {
   return (
-    <div className="category-container">
+    <Link
+      to={`/shop/${category.title.toLowerCase()}`}
+      className="category-container"
+    >
       <div
         className="background-image"
         style={{
@@ -14,7 +20,7 @@ const CategoryItem = ({ category }) => {
         <h2>{category.title}</h2>
         <p>Shop Now</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
