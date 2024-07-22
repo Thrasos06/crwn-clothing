@@ -8,30 +8,38 @@ import { CartContext } from "../../contexts/cart.context";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 
-import "./cart-dropdown.styles.scss";
+import {
+  CartDropdownContainer,
+  // EmptyMessage,
+  CartItems,
+  EmptyMessage,
+} from "./cart.dropdown.styles";
 
 const CartDropdown = () => {
-
   const { cartItems, cartTotal } = useContext(CartContext);
 
   const navigate = useNavigate();
 
   const goToCheckoutPage = () => {
     navigate("/checkout");
-  }
+  };
 
   return (
-    <div className="cart-dropdown-container">
-      <div className="cart-items">
-        {cartItems.map( item => <CartItem key={item} cartItem={item} />)}
-      </div>
+    <CartDropdownContainer>
+      <CartItems>
+        {cartItems.length ? (
+          cartItems.map((item) => <CartItem key={item} cartItem={item} />)
+        ) : (
+          <EmptyMessage>Your cart is emty</EmptyMessage>
+        )}
+      </CartItems>
 
-      <div className='total-amount'>
-          <span>Total: {cartTotal}$</span>
+      <div className="total-amount">
+        <span>Total: {cartTotal}$</span>
       </div>
 
       <Button onClick={goToCheckoutPage}>Go to checkout</Button>
-    </div>
+    </CartDropdownContainer>
   );
 };
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "./product-card.styles.scss";
 
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { CartContext } from "../../contexts/cart.context";
 
 const ProductCard = ({ product, linkUrl }) => {
@@ -28,7 +28,10 @@ const ProductCard = ({ product, linkUrl }) => {
         </div>
       </Link>
 
-      <Button buttonType="inverted" onClick={addProductToCart}>
+      <Button
+        buttonType={BUTTON_TYPE_CLASSES.inverted}
+        onClick={addProductToCart}
+      >
         Add to cart
       </Button>
     </div>
